@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maravia-studio.tusupercompras99.chatgpt.site/sitemap.xml
