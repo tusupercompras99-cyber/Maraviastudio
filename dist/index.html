@@ -66,6 +66,11 @@
          logo y el menú se sigan leyendo sin perder el tono de la primera sección. */
       header.header-scrolled { background: var(--bg-soft); }
       .header-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 0; }
+      /* Aire vertical amplio: el logo y el menú quedan centrados en la franja,
+         sin pegarse al borde superior. Va con el selector de la cabecera porque
+         la regla .wrap del media query móvil pisaba el padding vertical de
+         .header-in y dejaba el logo pegado arriba en el teléfono. */
+      header .header-in { padding-top: 30px; padding-bottom: 30px; }
       .brand { display: block; width: 186px; flex: none; text-decoration: none; }
       .brand img { display: block; width: 100%; height: auto; }
       .brand .logo-dark { display: none; }
@@ -115,7 +120,7 @@
           position: fixed; top: 0; left: 0; z-index: 90;
           width: 100%; height: 100vh; height: 100dvh;
           background: var(--bg-soft);
-          padding: 18px 24px 42px;
+          padding: 30px 24px 42px;
           transform: translateX(-104%);
           visibility: hidden;
           transition: transform .42s cubic-bezier(.22,.61,.36,1), visibility 0s linear .42s;
@@ -153,7 +158,7 @@
       }
       .hero-in {
         position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr .95fr;
-        gap: 48px; align-items: center; padding: 150px 0 76px;
+        gap: 48px; align-items: center; padding: 176px 0 76px;
       }
       .hero-chip {
         display: inline-flex; align-items: center; gap: 8px;
@@ -177,7 +182,7 @@
       .hero-badge strong { display: block; font-size: 1.3rem; font-weight: 700; }
       .hero-badge small { font-weight: 600; color: #5a7189; font-family: var(--font-body); }
       @media (max-width: 900px) {
-        .hero-in { grid-template-columns: 1fr; padding: 148px 0 60px; gap: 28px; }
+        .hero-in { grid-template-columns: 1fr; padding: 174px 0 60px; gap: 28px; }
         .hero-badge { left: 0; bottom: 22px; }
       }
 
@@ -710,7 +715,7 @@
       }
       @media (max-width: 640px) {
         .wrap { padding: 0 24px; }
-        .hero-in { padding-top: 140px; }
+        .hero-in { padding-top: 166px; }
         .mobile-menu { padding-left: 24px; padding-right: 24px; }
         section { padding: 64px 0; }
         form.lead { padding: 28px 22px; }
